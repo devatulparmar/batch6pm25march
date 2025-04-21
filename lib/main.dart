@@ -40,136 +40,42 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
           elevation: 50,
-          leading: Container(
-            padding: const EdgeInsets.only(top: 15, left: 5),
-            child: const Text(
-              "Hello World",
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
+          leading: const Icon(
+            Icons.refresh,
+            color: Colors.white,
           ),
-          leadingWidth: 80,
+          // leadingWidth: 80,
           centerTitle: true,
         ),
-        // body: Column(
-        //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Container(
-        //       color: Colors.black,
-        //       child: Row(
-        //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //         children: [
-        //           Container(
-        //             // color: Colors.red,
-        //             height: 100,
-        //             width: 100,
-        //             padding: const EdgeInsets.only(left: 15, top: 25),
-        //             decoration: BoxDecoration(
-        //               color: Colors.red,
-        //               borderRadius: BorderRadius.circular(100),
-        //               border: Border.all(color: Colors.black, width: 5),
-        //             ),
-        //             child: const Text(
-        //               "Hello",
-        //               style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 18,
-        //               ),
-        //             ),
-        //           ),
-        //           Container(
-        //             // color: Colors.red,
-        //             height: 100,
-        //             width: 100,
-        //             padding: const EdgeInsets.only(left: 15, top: 25),
-        //             decoration: BoxDecoration(
-        //               color: Colors.blue,
-        //               borderRadius: BorderRadius.circular(100),
-        //               border: Border.all(color: Colors.black, width: 5),
-        //             ),
-        //             child: const Text(
-        //               "Hello",
-        //               style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 18,
-        //               ),
-        //             ),
-        //           ),
-        //           Container(
-        //             // color: Colors.red,
-        //             height: 100,
-        //             width: 100,
-        //             padding: const EdgeInsets.only(left: 15, top: 25),
-        //             decoration: BoxDecoration(
-        //               color: Colors.orange,
-        //               borderRadius: BorderRadius.circular(100),
-        //               border: Border.all(color: Colors.black, width: 5),
-        //             ),
-        //             child: const Text(
-        //               "Hello",
-        //               style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 18,
-        //               ),
-        //             ),
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //     Container(
-        //       color: Colors.black,
-        //       child: Column(
-        //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //         children: [
-        //           Container(
-        //             // color: Colors.red,
-        //             height: 100,
-        //             width: 100,
-        //             padding: const EdgeInsets.only(left: 15, top: 25),
-        //             decoration: BoxDecoration(
-        //               color: Colors.brown,
-        //               borderRadius: BorderRadius.circular(100),
-        //               border: Border.all(color: Colors.black, width: 5),
-        //             ),
-        //             child: const Text(
-        //               "Hello 1",
-        //               style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 18,
-        //               ),
-        //             ),
-        //           ),
-        //           const SizedBox(
-        //             height: 150,
-        //           ),
-        //           Container(
-        //             // color: Colors.red,
-        //             height: 100,
-        //             width: 100,
-        //             padding: const EdgeInsets.only(left: 15, top: 25),
-        //             decoration: BoxDecoration(
-        //               color: Colors.green,
-        //               borderRadius: BorderRadius.circular(100),
-        //               border: Border.all(color: Colors.black, width: 5),
-        //             ),
-        //             child: const Text(
-        //               "Hello 2",
-        //               style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 18,
-        //               ),
-        //             ),
-        //           ),
-        //           const SizedBox(
-        //             height: 50,
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.red,
+                height: 100,
+                // width: 50,
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.blue,
+                // width: 100,
+                height: 100,
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                color: Colors.green,
+                height: 100,
+                // width: 100,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
