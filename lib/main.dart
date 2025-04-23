@@ -23,19 +23,19 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           backgroundColor: Colors.brown,
           title: const Text(
-            "My First App",
+            "Hello World",
             style: TextStyle(
               color: Colors.white,
             ),
           ),
-          actions: [
-            const Text(
+          actions: const [
+            Text(
               "Click",
               style: TextStyle(
                 color: Colors.white,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
           ],
@@ -47,31 +47,28 @@ class _MyAppState extends State<MyApp> {
           // leadingWidth: 80,
           centerTitle: true,
         ),
-        body: Column(
+        body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              flex: 1,
               child: Container(
-                color: Colors.red,
+                color: Colors.black,
                 height: 100,
-                // width: 50,
+                width: 350,
               ),
             ),
             Expanded(
-              flex: 3,
               child: Container(
                 color: Colors.blue,
-                // width: 100,
+                width: 350,
                 height: 100,
               ),
             ),
-            Expanded(
-              flex: 2,
+            Flexible(
               child: Container(
                 color: Colors.green,
                 height: 100,
-                // width: 100,
+                width: 500,
               ),
             ),
           ],
