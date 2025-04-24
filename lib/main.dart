@@ -10,14 +10,42 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState(){
+    print("createState method called");
+    return  _MyAppState();
+  }
 }
 
 class _MyAppState extends State<MyApp> {
   int count = 0;
 
   @override
+  void initState() {
+    super.initState();
+    print("initState method called");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("didChangeDependencies method called");
+  }
+
+  @override
+  void didUpdateWidget(covariant MyApp oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget method called");
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose method called");
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print("build method called");
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
