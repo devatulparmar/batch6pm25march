@@ -1,8 +1,17 @@
+import 'package:batch6pm25march/image_screen.dart';
+import 'package:batch6pm25march/utils/color_const.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    MaterialApp(
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          color: clrAppBarBackTheme,
+        ),
+      ),
+      home: const ImageScreen(),
+    ),
   );
 }
 
@@ -10,9 +19,9 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState(){
+  State<MyApp> createState() {
     print("createState method called");
-    return  _MyAppState();
+    return _MyAppState();
   }
 }
 
@@ -78,21 +87,48 @@ class _MyAppState extends State<MyApp> {
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
+            // Expanded(
+            //   flex: 1,
+            //   child: Container(
+            //     color: Colors.black,
+            //     height: 100,
+            //     width: 350,
+            //   ),
+            // ),
+            // Expanded(
+            //   flex: 2,
+            //   child: Container(
+            //     color: Colors.blue,
+            //     width: 350,
+            //     height: 100,
+            //   ),
+            // ),
+            // Expanded(
+            //   flex: 3,
+            //   child: Container(
+            //     color: Colors.pink,
+            //     width: 350,
+            //     height: 100,
+            //   ),
+            // ),
+            Flexible(
+              flex: 2,
               child: Container(
-                color: Colors.black,
+                color: Colors.orange,
                 height: 100,
-                width: 350,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.blue,
-                width: 350,
-                height: 100,
+                width: 200,
               ),
             ),
             Flexible(
+              flex: 2,
+              child: Container(
+                color: Colors.blue,
+                height: 100,
+                width: 500,
+              ),
+            ),
+            Flexible(
+              flex: 2,
               child: Container(
                 color: Colors.green,
                 height: 100,
