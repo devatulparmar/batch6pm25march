@@ -1,4 +1,6 @@
 import 'package:batch6pm25march/image_screen.dart';
+import 'package:batch6pm25march/list_screen.dart';
+import 'package:batch6pm25march/listview_screen.dart';
 import 'package:batch6pm25march/utils/color_const.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +12,7 @@ void main() {
           color: clrAppBarBackTheme,
         ),
       ),
-      home: const ImageScreen(),
+      home: const ListviewScreen(),
     ),
   );
 }
