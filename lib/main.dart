@@ -1,3 +1,5 @@
+import 'package:batch6pm25march/grid_screen.dart';
+import 'package:batch6pm25march/gridview_builder_screen.dart';
 import 'package:batch6pm25march/image_screen.dart';
 import 'package:batch6pm25march/list_screen.dart';
 import 'package:batch6pm25march/listview_screen.dart';
@@ -13,7 +15,7 @@ void main() {
           color: clrAppBarBackTheme,
         ),
       ),
-      home: const ListviewSeparatedScreen(),
+      home: const GridviewBuilderScreen(),
     ),
   );
 }
