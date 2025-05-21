@@ -16,6 +16,14 @@ class _ImageScreenState extends State<ImageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.close,
+          ),
+        ),
         title: const Text("Image Screen"),
       ),
       body: Column(
