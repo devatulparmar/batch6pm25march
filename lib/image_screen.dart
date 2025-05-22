@@ -17,9 +17,7 @@ class _ImageScreenState extends State<ImageScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
           icon: const Icon(
             Icons.close,
           ),

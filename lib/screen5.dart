@@ -1,30 +1,40 @@
-import 'package:batch6pm25march/image_screen.dart';
-import 'package:batch6pm25march/screen1.dart';
+import 'package:batch6pm25march/home_screen.dart';
+import 'package:batch6pm25march/screen3.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Screen5 extends StatefulWidget {
+  const Screen5({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Screen5> createState() => _Screen5State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _Screen5State extends State<Screen5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+            // Navigator.pop(context);
+            // Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.close,
+          ),
+        ),
+        backgroundColor: Colors.brown.shade500,
+        title: const Text("Screen 5"),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(15),
+      body: Column(
         children: [
           ElevatedButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => const Screen1(),
+                  builder: (BuildContext context) => const Screen3(),
                 ),
               );
             },
@@ -32,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor: Colors.red,
             ),
             child: const Text(
-              "Go to Screen 1",
+              "Go to Screen 3",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,
@@ -41,18 +51,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => const ImageScreen(),
+                  builder: (BuildContext context) => const HomeScreen(),
                 ),
+                (Route route) => false,
               );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
             ),
             child: const Text(
-              "Image Screen",
+              "Go to Home Screen",
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,
