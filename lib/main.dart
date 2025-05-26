@@ -1,5 +1,5 @@
-import 'package:batch6pm25march/home_screen.dart';
 import 'package:batch6pm25march/utils/color_const.dart';
+import 'package:batch6pm25march/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,12 @@ void main() {
           color: clrAppBarBackTheme,
         ),
       ),
-      home: const HomeScreen(),
+      onGenerateRoute: MyRoutes.onGenerate,
+      // routes: {
+      //   "/": (BuildContext context) => const HomeScreen(),
+      //   routeScreen1: (BuildContext context) => const Screen1(),
+      //   routeScreen2: (BuildContext context) => const Screen2(),
+      // },
     ),
   );
 }

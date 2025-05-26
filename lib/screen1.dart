@@ -1,5 +1,6 @@
 
 import 'package:batch6pm25march/screen2.dart';
+import 'package:batch6pm25march/utils/routes_const.dart';
 import 'package:flutter/material.dart';
 
 class Screen1 extends StatefulWidget {
@@ -29,12 +30,16 @@ class _Screen1State extends State<Screen1> {
               //   ),
               // );
 
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => const Screen2(),
-                ),
-              );
+              // Navigator.pushReplacement(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (BuildContext context) => const Screen2(),
+              //   ),
+              // );
+
+              ///second method
+              Navigator.pushReplacementNamed(context, routeScreen2);
+
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,

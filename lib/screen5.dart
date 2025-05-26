@@ -1,5 +1,6 @@
 import 'package:batch6pm25march/home_screen.dart';
 import 'package:batch6pm25march/screen3.dart';
+import 'package:batch6pm25march/utils/routes_const.dart';
 import 'package:flutter/material.dart';
 
 class Screen5 extends StatefulWidget {
@@ -51,11 +52,18 @@ class _Screen5State extends State<Screen5> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushAndRemoveUntil(
+              // Navigator.pushAndRemoveUntil(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (BuildContext context) => const HomeScreen(),
+              //   ),
+              //   (Route route) => false,
+              // );
+
+              ///Second Method
+              Navigator.pushNamedAndRemoveUntil(
                 context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => const HomeScreen(),
-                ),
+                routeHomeScreen,
                 (Route route) => false,
               );
             },
