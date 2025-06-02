@@ -1,5 +1,6 @@
 import 'package:batch6pm25march/home_screen.dart';
 import 'package:batch6pm25march/login_screen.dart';
+import 'package:batch6pm25march/register_screen.dart';
 import 'package:batch6pm25march/screen1.dart';
 import 'package:batch6pm25march/screen2.dart';
 import 'package:batch6pm25march/screen3.dart';
@@ -60,9 +61,13 @@ class MyRoutes {
         return MaterialPageRoute(
           builder: (BuildContext context) => const Screen5(),
         );
-        case routeLoginScreen:
+      case routeLoginScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const LoginScreen(),
+        );
+      case routeRegisterScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const RegisterScreen(),
         );
       default:
         return MaterialPageRoute(

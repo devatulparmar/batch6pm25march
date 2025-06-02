@@ -6,3 +6,4 @@ const String routeScreen3 = "routeScreen3";
 const String routeScreen4 = "routeScreen4";
 const String routeScreen5 = "routeScreen5";
 const String routeLoginScreen = "routeLoginScreen";
+const String routeRegisterScreen = "RegisterScreen";

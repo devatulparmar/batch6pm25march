@@ -8,6 +8,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isPasswordHidden = false;
+  TextEditingController userController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,28 +24,11 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             TextField(
+              controller: userController,
+              textInputAction: TextInputAction.next,
               decoration: InputDecoration(
-                // hintText: "Enter username",
-                // hintStyle: const TextStyle(color: Colors.green),
-                // label: const Text("Username"),
-                // labelStyle: const TextStyle(color: Colors.red),
-                helper: const Text("Username must be unique."),
-                // icon: const Icon(Icons.person),
-                // iconColor: Colors.red,
-                // prefixIcon: const Icon(Icons.person),
-                // prefixIconColor: Colors.red,
-                // suffixText: "View",
-                // suffixStyle: const TextStyle(color: Colors.black),
-                suffixIcon: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("View"),
-                  ],
-                ),
-
-                suffixIconColor: Colors.red,
-                // errorText: "This is an Error!",
+                hintText: "Enter Username",
+                prefixIcon: const Icon(Icons.person),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(35),
                 ),
@@ -51,6 +38,70 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Colors.red,
                     width: 2,
                   ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextField(
+              controller: passwordController,
+              obscureText: isPasswordHidden,
+              decoration: InputDecoration(
+                hintText: "Enter Password",
+                prefixIcon: const Icon(Icons.password),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() => isPasswordHidden = !isPasswordHidden);
+                  },
+                  icon: Icon(
+                    Icons.remove_red_eye,
+                    color: isPasswordHidden ? Colors.grey : Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(35),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(35),
+                  borderSide: const BorderSide(
+                    color: Colors.red,
+                    width: 2,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                print('clicked');
+                setState(() {});
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
+              child: const Text(
+                "Login",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text("UserName: ${userController.text}"),
+            Text("Password: ${passwordController.text}"),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                userController.clear();
+                passwordController.clear();
+                setState(() {});
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              child: const Text(
+                "Clear",
+                style: TextStyle(
+                  color: Colors.white,
                 ),
               ),
             ),
