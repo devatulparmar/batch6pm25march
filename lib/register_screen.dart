@@ -9,6 +9,36 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   String selectedGender = "M";
+  String? selectedCity;
+  bool langEnglish = false;
+  bool langGujarati = false;
+  bool langHindi = false;
+
+  List<String> cityNamesListObject = [
+    "Vadodara",
+    "Ahmedabad",
+    "Surat",
+    "Rajkot"
+  ];
+
+  List<DropdownMenuItem> cityList = [
+    const DropdownMenuItem(
+      value: "Vadodara",
+      child: Text("Vadodara"),
+    ),
+    const DropdownMenuItem(
+      value: "Ahmedabad",
+      child: Text("Ahmedabad"),
+    ),
+    const DropdownMenuItem(
+      value: "Surat",
+      child: Text("Surat"),
+    ),
+    const DropdownMenuItem(
+      value: "Bharuch",
+      child: Text("Bharuch"),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +139,127 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
             ],
+          ),
+          const SizedBox(height: 20),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(35),
+              border: Border.all(color: Colors.black),
+            ),
+            child: DropdownButton(
+              items: cityList,
+              value: selectedCity,
+              hint: const Text("Select City"),
+              isExpanded: true,
+              isDense: false, // for button height
+              underline: const SizedBox.shrink(),
+              icon: const Icon(
+                Icons.arrow_downward,
+                size: 20,
+              ),
+              borderRadius: BorderRadius.circular(35),
+              onChanged: (city) {
+                selectedCity = city!;
+                setState(() {});
+              },
+            ),
+          ),
+          const SizedBox(height: 20),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(35),
+              border: Border.all(color: Colors.black),
+            ),
+            child: DropdownButton(
+              items: cityNamesListObject
+                  .map(
+                    (item) => DropdownMenuItem(
+                      value: item,
+                      child: Text(item),
+                    ),
+                  )
+                  .toList(),
+              value: selectedCity,
+              hint: const Text("Select City"),
+              isExpanded: true,
+              isDense: false, // for button height
+              underline: const SizedBox.shrink(),
+              icon: const Icon(
+                Icons.arrow_downward,
+                size: 20,
+              ),
+              borderRadius: BorderRadius.circular(35),
+              onChanged: (city) {
+                selectedCity = city!;
+                setState(() {});
+              },
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              Checkbox(
+                value: langEnglish,
+                onChanged: (newValue) {
+                  langEnglish = newValue!;
+                  setState(() {});
+                },
+              ),
+              const Text("English"),
+              Checkbox(
+                value: langGujarati,
+                activeColor: Colors.red,
+                onChanged: (newValue) {
+                  langGujarati = newValue!;
+                  setState(() {});
+                },
+              ),
+              const Text("Gujarati"),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Flexible(
+            flex: 1,
+            child: CheckboxListTile(
+              value: langEnglish,
+              title: const Text("English"),
+              contentPadding: EdgeInsets.zero,
+              controlAffinity: ListTileControlAffinity.leading,
+              onChanged: (newValue) {
+                langEnglish = newValue!;
+                setState(() {});
+              },
+            ),
+          ),
+          Flexible(
+            flex: 1,
+            child: CheckboxListTile(
+              value: langGujarati,
+              activeColor: Colors.red,
+              contentPadding: EdgeInsets.zero,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: const Text("Gujarati"),
+              onChanged: (newValue) {
+                langGujarati = newValue!;
+                setState(() {});
+              },
+            ),
+          ),
+          Flexible(
+            flex: 1,
+            child: CheckboxListTile(
+              value: langHindi,
+              activeColor: Colors.red,
+              contentPadding: EdgeInsets.zero,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: const Text("Hindi"),
+              onChanged: (newValue) {
+                langHindi = newValue!;
+                setState(() {});
+              },
+            ),
           ),
           const SizedBox(height: 20),
         ],
